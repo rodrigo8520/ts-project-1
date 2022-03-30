@@ -1,0 +1,20 @@
+{
+  "name": "testserverts1",
+  "version": "1.0.0",
+  "description": "prueba",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.ts",
+    "tsc": "tsc"
+  },
+  "author": "ro",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.13",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.5"
+  }
+}
