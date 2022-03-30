@@ -15,6 +15,11 @@ class Server {
 
         this.app.get('/', (req, res) => res.send('Express + TypeScript Server'));
 
+        function suma (numero1:number, numero2:number) :number {
+            return numero1+numero2;
+        }
+        console.log(suma(10,5));
+
     }
 
     listen() {
