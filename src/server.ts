@@ -1,7 +1,6 @@
 
 import express, { Request, Response } from 'express'
-
-
+import router from './router';
 
 class Server {
 
@@ -13,35 +12,50 @@ class Server {
 
     constructor() {
 
-        this.app.get('/', (req, res) => {
-            res.send('Express + TypeScript Server')
-        });
+        // this.app.get('/', (req, res) => {
+        //     res.send('Express + TypeScript Server')
+        // });
+        this.app.use(router)
 
-        this.app.get('/sumar/:valor1/:valor2', (req, res) => {
+        // this.app.get('/sumar/:valor1/:valor2', (req, res) => {
 
-            let var1 = req.params.valor1;
-            let var2 = req.params.valor2;
+        //     let var1 = req.params.valor1;
+        //     let var2 = req.params.valor2;
 
 
-            let aus1 = parseInt(var1)
-            let aus2 = parseInt(var2)
+        //     let aus1 = parseInt(var1)
+        //     let aus2 = parseInt(var2)
+        //     let respuesta = sumar(aus1 ,  aus2)
+        //     //const respuesta = this();
+        //     res.send('el numero es ' + respuesta);
+        //     //res.send('el numero es '+dos);
+        // });
 
-            const respuesta = this.sumar(aus1, aus2);
-            res.send('el numero es ' + respuesta);
-            //res.send('el numero es '+dos);
-        });
+        // this.app.get('/reajusteSalario/:valor1/:valor2', (req, res) => {
 
-        this.app.get('/horaTrabajo/:valor1/:valor2', (req, res) => {
+        //     let var1 = req.params.valor1;
+        //     let var2 = req.params.valor2;
 
-            let var1 = req.params.valor1;
-            let var2 = req.params.valor2;
 
-            let aus1 = parseInt(var1)
-            let aus2 = parseInt(var2)
+        //     let aus1 = parseInt(var1)
+        //     let aus2 = parseInt(var2)
 
-            const respuesta = this.horaTrabajo(aus1, aus2);
-            res.send('Tu salario es ' + respuesta);
-        })
+        //     const respuesta = this.reajusteSalario(aus1, aus2);
+        //     res.send('Tu nuevo salario es de  ' + respuesta);
+        //     //res.send('el numero es '+dos);
+        // });
+
+        // this.app.get('/horaTrabajo/:valor1/:valor2', (req, res) => {
+
+        //     let var1 = req.params.valor1;
+        //     let var2 = req.params.valor2;
+
+        //     let aus1 = parseInt(var1)
+        //     let aus2 = parseInt(var2)
+
+        //     const respuesta = this.horaTrabajo(aus1, aus2);
+        //     res.send('Tu salario es ' + respuesta);
+        // })
 
         // function suma (numero1:number, numero2:number) {
         //     return numero1+numero2;
@@ -54,37 +68,43 @@ class Server {
 
     }
 
-    sumar(num1: number, num2: number): number {
-
-        return num1 + num2;
-    }
+    
 
 
-    hora(hora: number, tarifa: number): number {
+    // hora(hora: number, tarifa: number): number {
 
-        let resultadoHora 
-        return resultadoHora = hora * tarifa;
-    }
+    //     let resultadoHora 
+    //     return resultadoHora = hora * tarifa;
+    // }
 
-    horaExtra(hora: number, tarifa: number): number {
+    // horaExtra(hora: number, tarifa: number): number {
 
-        return hora * (tarifa + tarifa/2)
-    }
+    //     return hora * (tarifa + tarifa/2)
+    // }
 
-    horaTrabajo(horas: number, tarifa: number): number {
+    // horaTrabajo(horas: number, tarifa: number): number {
         
-        let salarios
+    //     let salarios
 
-        if (horas > 40) {
-            salarios = this.horaExtra(horas, tarifa)
+    //     if (horas > 40) {
+    //         salarios = this.horaExtra(horas, tarifa)
             
 
-        } else if (horas <= 40) {
-            salarios = this.hora(horas, tarifa)
+    //     } else if (horas <= 40) {
+    //         salarios = this.hora(horas, tarifa)
 
-        }
-        return salarios;
-    }
+    //     }
+    //     return salarios;
+    // }
+
+    //Calcular nuevo salario de un empleado si obtuvo un reajuste del 4,5 sobre si salario anterior
+    // reajusteSalario(salario: number, reajuste: number): number {
+
+    //     let nuevoSalario
+
+    //     reajuste = salario * 0.045
+    //     return nuevoSalario = salario + reajuste;
+    // }
 
 
     listen() {
