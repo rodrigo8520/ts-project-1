@@ -1,12 +1,18 @@
 import { Router } from "express";
 import express, { Request, Response } from 'express'
-import { horaTrabajo, reajusteSalario, sumar } from "./services/matematica";
+// import * as mate from "./services/matematica";
+import { sumar } from "./services/matematica";
+import { reajusteSalario } from "./services/salario";
+import { horaTrabajo } from "./services/trabajo";
+
 
 
 const router = Router()
 
-router.get('/', (req, res) => {
+router.get('/', (req: Request, res: express.Response) => {
     res.send('Express + TypeScript Server')
+
+    
 }); 
 
 router.get('/sumar/:valor1/:valor2', (req, res) => {
