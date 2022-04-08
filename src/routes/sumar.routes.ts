@@ -6,7 +6,7 @@ import { getSumar } from "../controllers/sumar.controller";
 const router = Router()
 //matematicas/sumar/var1/var2
 
-router.use('/sumar/:valor1/:valor2', getSumar)
+router.get('/sumar/:valor1/:valor2', getSumar)
 // router.get('/sumar/:valor1/:valor2', (req, res) => {
 
 //     let var1 = req.params.valor1;

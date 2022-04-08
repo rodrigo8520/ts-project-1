@@ -6,9 +6,9 @@ import { getHoraTrabajo, getReajuste } from "../controllers/remu.controller"
 const router = Router()
 //matematicas/sumar/var1/var2
 
-router.use('/horatrabajo/:valor1/:valor2', getHoraTrabajo)
+router.get('/horatrabajo/:valor1/:valor2', getHoraTrabajo)
 
-router.use('/reajuste/:valor1/:valor2', getReajuste)
+router.get('/reajuste/:valor1/:valor2', getReajuste)
 
 
 
