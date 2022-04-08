@@ -15,7 +15,7 @@ class Server {
         // this.app.get('/', (req, res) => {
         //     res.send('Express + TypeScript Server')
         // });
-        this.app.use(router)
+        this.app.use('/v1',router)
 
         // this.app.get('/sumar/:valor1/:valor2', (req, res) => {
 

@@ -1,5 +1,5 @@
 
-
+//matematicas/sumar/var1/var2
 
  const sumar = (num1: number, num2: number): number => {
 

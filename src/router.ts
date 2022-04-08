@@ -1,32 +1,36 @@
 import { Router } from "express";
 import express, { Request, Response } from 'express'
 // import * as mate from "./services/matematica";
-import { sumar } from "./services/matematica";
+
 import { reajusteSalario } from "./services/salario";
 import { horaTrabajo } from "./services/trabajo";
-
+import sumarRoutes from "./routes/sumar.routes";
 
 
 const router = Router()
 
+
+// router.use(`/URL`, cargoRoutes);
+
 router.get('/', (req: Request, res: express.Response) => {
     res.send('Express + TypeScript Server')
 
-    
 }); 
+//matematicas/sumar/var1/var2
+router.use('/matematicas', sumarRoutes)
 
-router.get('/sumar/:valor1/:valor2', (req, res) => {
+// router.get('/sumar/:valor1/:valor2', (req, res) => {
 
-    let var1 = req.params.valor1;
-    let var2 = req.params.valor2;
+//     let var1 = req.params.valor1;
+//     let var2 = req.params.valor2;
 
-    let aus1 = parseInt(var1)
-    let aus2 = parseInt(var2)
-    let respuesta = sumar(aus1 , aus2)
-    //const respuesta = this();
-    res.send('el numero es ' + respuesta);
-    //res.send('el numero es '+dos);
-});
+//     let aus1 = parseInt(var1)
+//     let aus2 = parseInt(var2)
+//     let respuesta = sumar(aus1 , aus2)
+//     //const respuesta = this();
+//     res.send('el numero es ' + respuesta);
+//     //res.send('el numero es '+dos);
+// });
 
 router.get('/reajusteSalario/:valor1/:valor2', (req, res) => {
 
