@@ -1,21 +1,21 @@
 import type { Sequelize } from "sequelize";
-import { alumnos as _alumnos } from "./alumnos";
-import type { alumnosAttributes, alumnosCreationAttributes } from "./alumnos";
+import { Empresa as _Empresa } from "./Empresa";
+import type { EmpresaAttributes, EmpresaCreationAttributes } from "./Empresa";
 
 export {
-  _alumnos as alumnos,
+  _Empresa as Empresa,
 };
 
 export type {
-  alumnosAttributes,
-  alumnosCreationAttributes,
+  EmpresaAttributes,
+  EmpresaCreationAttributes,
 };
 
 export function initModels(sequelize: Sequelize) {
-  const alumnos = _alumnos.initModel(sequelize);
+  const Empresa = _Empresa.initModel(sequelize);
 
 
   return {
-    alumnos: alumnos,
+    Empresa: Empresa,
   };
 }

@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { sumar } from "../services/matematica";
 import { Model, Optional, Sequelize } from 'sequelize';
 import { alumnos } from "../models/alumnos";
+import { Empresa } from "../models/Empresa";
 
 // const router = Router()
                         
@@ -20,24 +21,58 @@ export const getSumar = async (req: Request, res: Response, next: NextFunction) 
     //console.log(respuesta)
 
     const sequelize = new Sequelize({
-        database:"prueba",
-        username:"usuario",
-        password:"password",
+        database:"facturacionDb",
+        username:"factur",
+        password:"abc123",
         host:"localhost",
         port:3306,
         dialect:'mysql',
     })
     try {
         await sequelize.authenticate();
-        console.log('Connection has been established successfully.');
+        console.log('Connection facturacionDb has been established successfully.');
       } catch (error) {
-        console.error('Unable to connect to the database:', error);
+        console.error('Unable to connect to the database facturacionDb:', error);
       }
 
-      
+      //id - direccion - telefono - fechaCreacion - fechaModificacion
 
-    //   const alum = `INSERT INTO alumnos (alumnoID, nombre, apellido, telefono) 
-    //   VALUES ('', '', '');`
+
+      /*const EmpreId = await Empresa.initModel(sequelize)
+      const empresaid = await EmpreId.create({
+         
+          direccion: "libertador 1234",
+          telefono: 5378634,
+          fechaCreacion: "03-04-2022",
+      })*/
+
+
+      const EmpresaUp = await Empresa.initModel(sequelize)
+      const up = await EmpresaUp.update({ direccion: "milippill",
+                                          telefono: 91234562  }, {
+        where: {
+          direccion: "libertador 1234",
+          telefono: 53786534,
+          id: 9
+        }
+      });
+
+      //// Delete everyone named "Jane"
+      const EmpresaDele = await Empresa.initModel(sequelize)
+      const dele = await EmpresaDele.destroy({
+        where: {
+          id: 4
+        }
+      });
+
+      const EmpresaModel = await Empresa.initModel(sequelize)
+      const mod = await EmpresaModel.findAll()
+
+      //console.log(mod);
+      console.log(mod.every(id => id instanceof Empresa)); // true
+      console.log("All mod:", JSON.stringify(mod, null, 2));
+
+      res.send('el numero es ' + respuesta);
 
       //const jane = await User.create({ name: "Jane" });
 
@@ -49,7 +84,7 @@ export const getSumar = async (req: Request, res: Response, next: NextFunction) 
           telefono: 7777
       })*/
 
-      const AlumnoUp = await alumnos.initModel(sequelize)
+      /*const AlumnoUp = await alumnos.initModel(sequelize)
       const up = await AlumnoUp.update({ apellido: "Doe" }, {
         where: {
           apellido: "bbb"
@@ -69,20 +104,9 @@ export const getSumar = async (req: Request, res: Response, next: NextFunction) 
 
       //console.log(mod);
       console.log(mod.every(alumnoID => alumnoID instanceof alumnos)); // true
-      console.log("All mod:", JSON.stringify(mod, null, 2));
+      console.log("All mod:", JSON.stringify(mod, null, 2));*/
 
-    //   const mod = AlumnoModel.findAll({
-    //     include: [alumnos]
-    //   });
-
-     /* Team.findAll({
-        include: [
-            Player
-        ]
-    }
-)*/
-
-      res.send('el numero es ' + respuesta);
+    
 
 }
 

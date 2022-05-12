@@ -7,6 +7,7 @@ npm run start
 
 sequelize-auto -o "./src/models" -h localhost -d prueba -u usuario -p 3306 -x 'password' -l ts
 
+sequelize-auto -o "./src/models" -h localhost -d facturacionDb -u factur -p 3306 -x 'abc123' -l ts
 
 TAREA
 
