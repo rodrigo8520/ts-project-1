@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { horaTrabajo, reajusteSalario } from "../services/trabajo";
+import { horaTrabajo, reajusteSalario } from "../services/trabajo.service";
 
 
 

@@ -1,7 +1,7 @@
 
 import faker from "@faker-js/faker";
 import { NextFunction, Request, Response } from "express";
-import Productos from "../services/productos";
+import Productos from "../services/productos.service";
 
 
 export const getProducto = async (req: Request, res: Response, next: NextFunction) => {

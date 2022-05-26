@@ -1,5 +1,6 @@
 
-import express, { Request, Response } from 'express'
+import express, { Request, Response } from 'express';
+import morgan from 'morgan';
 import router from './router';
 
 class Server {
@@ -15,7 +16,25 @@ class Server {
         // this.app.get('/', (req, res) => {
         //     res.send('Express + TypeScript Server')
         // });
-        this.app.use('/v1',router)
+
+        // lectura parse del body
+        this.app.use(express.json({
+            limit: '5MB'
+        }));
+
+        //Morgan http loger
+        // morgan.token('body', (req: Request, res) => {
+
+        //     const resp = JSON.stringify(req.body)
+        //     return resp.substring(0, 1000);
+        // });
+
+        this.app.use(morgan('tiny'));
+        console.log("Morgan OK");
+        
+        // se genera aca la url base
+        this.app.use('/v1',router);
+        console.log("Iniciando Routes")
 
         // this.app.get('/sumar/:valor1/:valor2', (req, res) => {
 

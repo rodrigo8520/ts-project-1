@@ -28,3 +28,7 @@ docker image rm 96d0eae5ed60
 
 Montar iniciar servidor Docker
 PS D:\source\docker\MySql> docker-compose -f mysql.yml up -d 
+
+
+Morgan - se instalo npm de tyscript y dio error 
+        se instala el npm i morgan se soluciono

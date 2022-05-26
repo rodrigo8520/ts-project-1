@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { sumar } from "../services/matematica";
+import { sumar } from "../services/matematica.service";
 import { Model, Optional, Sequelize } from 'sequelize';
 import { alumnos } from "../models/alumnos";
 import { Empresa } from "../models/Empresa";
@@ -18,7 +18,7 @@ export const getSumar = async (req: Request, res: Response, next: NextFunction) 
     //const respuesta = this();
 
     
-    //console.log(respuesta)
+    console.log(respuesta)
 
     const sequelize = new Sequelize({
         database:"facturacionDb",
@@ -35,6 +35,8 @@ export const getSumar = async (req: Request, res: Response, next: NextFunction) 
         console.error('Unable to connect to the database facturacionDb:', error);
       }
 
+      res.send('el numero es ' + respuesta);
+
       //id - direccion - telefono - fechaCreacion - fechaModificacion
 
 
@@ -44,7 +46,7 @@ export const getSumar = async (req: Request, res: Response, next: NextFunction) 
           direccion: "libertador 1234",
           telefono: 5378634,
           fechaCreacion: "03-04-2022",
-      })*/
+      })
 
 
       const EmpresaUp = await Empresa.initModel(sequelize)
@@ -55,24 +57,24 @@ export const getSumar = async (req: Request, res: Response, next: NextFunction) 
           telefono: 53786534,
           id: 9
         }
-      });
+      });*/
 
       //// Delete everyone named "Jane"
-      const EmpresaDele = await Empresa.initModel(sequelize)
-      const dele = await EmpresaDele.destroy({
-        where: {
-          id: 4
-        }
-      });
+      // const EmpresaDele = await Empresa.initModel(sequelize)
+      // const dele = await EmpresaDele.destroy({
+      //   where: {
+      //     id: 4
+      //   }
+      // });
 
-      const EmpresaModel = await Empresa.initModel(sequelize)
+      /*const EmpresaModel = await Empresa.initModel(sequelize)
       const mod = await EmpresaModel.findAll()
 
       //console.log(mod);
       console.log(mod.every(id => id instanceof Empresa)); // true
       console.log("All mod:", JSON.stringify(mod, null, 2));
 
-      res.send('el numero es ' + respuesta);
+      res.send('el numero es ' + respuesta);*/
 
       //const jane = await User.create({ name: "Jane" });
 

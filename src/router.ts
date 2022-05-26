@@ -6,6 +6,7 @@ import express, { Request, Response } from 'express'
 import sumarMatematica from "./routes/sumar.routes";
 import horaETrabajo from "./routes/remu.routes"
 import producto from "./routes/producto.routes"
+import empresa from "./routes/empresa.routes"
 
 const router = Router()
 
@@ -22,6 +23,8 @@ router.use('/matematicas', sumarMatematica)
 router.use('/remu', horaETrabajo)
 
 router.use('/producto', producto)
+
+router.use('/empresa', empresa)
 
 //router.use('/remu', reajusteTrabajo)
 
