@@ -19,6 +19,17 @@ export const getEmpresa = async (req: Request, res: Response, next: NextFunction
     //res.status(200) para apis
 }
 
+export const getEmpresaId = async (req: Request, res: Response, next: NextFunction) => {
+
+    const id: number = parseInt(req.params.id);
+    const empresaServ = new EmpresaServices();
+    const empresa = await empresaServ.getEmpresaId(id);
+
+    console.log("getEmpresa ID controller ok");
+    res.status(200).json(empresa);
+    
+}
+
 export const putEmpresa = async (req: Request, res: Response, next: NextFunction) => {
 
     const id: number = parseInt(req.params.id);
@@ -42,7 +53,7 @@ export const postEmpresa = async (req: Request, res: Response, next: NextFunctio
     console.log(payload.direccion);
     
     const empresa = await objService.postEmpresa(payload);
-    console.log("postEmpresa ok");
+    console.log("postEmpresa controller ok");
     
     res.status(200).json(empresa);
 

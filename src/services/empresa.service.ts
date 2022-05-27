@@ -48,6 +48,16 @@ class EmpresaServices {
 
     }
 
+    async getEmpresaId(id: number){
+
+        const EmpresaModel = await Empresa.initModel(this.conexion);
+        const mod = await EmpresaModel.findByPk(id);
+        console.log("getEmpresaId Service");
+        
+        return mod;
+
+    }
+
     //actualizaar
     async putEmpresa(id: number, empresa: any) {
 
@@ -73,7 +83,7 @@ class EmpresaServices {
     async postEmpresa(empresa: any) {
 
         const EmpreId = await Empresa.initModel(this.conexion);
-        console.log("postEmpresa OK");
+        console.log("postEmpresa services OK");
         const empresaid = await EmpreId.create(
             //opcion 1 Trae al objeto entero no se usa, puede traer problemas
             //empresa      
