@@ -8,6 +8,7 @@
  * @return {object} 500 - error no controlado - application/json
  */
 
+
 /**
  * GET /v1/empresa/{id}
  * @description  lista de empresa por id
@@ -30,6 +31,7 @@
  * @return {object} 500 - no se creo el registro, leer respuesta. - application/json 
  */
 
+
 /**
  * A EmpresaCreate type
  * @typedef {object} EmpresaCreate
@@ -51,6 +53,7 @@
  * @return {object} 500 - Error al eliminar - application/json
  */
 
+
 /**
  * PUT /v1/empresa/{id}
  * @description actualizacion de empresa
@@ -62,6 +65,7 @@
  * @return {object} 404 - no encontrado - application/json
  * @return {object} 500 - Error - application/json
  */
+
 
 /**
  * A empresaUpdate type
