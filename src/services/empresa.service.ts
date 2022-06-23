@@ -48,12 +48,12 @@ class EmpresaServices {
 
     }
 
-    async getEmpresaId(id: number){
+    async getEmpresaId(id: number) {
 
         const EmpresaModel = await Empresa.initModel(this.conexion);
         const mod = await EmpresaModel.findByPk(id);
         console.log("getEmpresaId Service");
-        
+
         return mod;
 
     }
@@ -87,7 +87,7 @@ class EmpresaServices {
         const empresaid = await EmpreId.create(
             //opcion 1 Trae al objeto entero no se usa, puede traer problemas
             //empresa      
-            
+
             //opcion 2  Se escribe cada uno de los 
             // {
             //     direccion: empresa.direccion,                
@@ -96,8 +96,8 @@ class EmpresaServices {
             //     fechaModificacion: new Date()
             // }
             //opcion 3  Tecnica de los 3 puntos
-                //   Trae el objeto entero + elementos extras que uno quiera
-            {                                                   
+            //   Trae el objeto entero + elementos extras que uno quiera
+            {
                 ...empresa,
                 fechaModificacion: new Date()
             }
@@ -117,8 +117,15 @@ class EmpresaServices {
         //     }
         // });
 
-        const empresa = await Empresa.findByPk(id);
-        await empresa.destroy();
+        try {
+            const empresa = await Empresa.findByPk(id);
+            await empresa.destroy();
+
+        } catch (error) {
+            console.log(error);
+            // return new Error("Error en deleteEmpresa service");
+            throw new Error("Error en deleteEmpresa service");
+        }
     }
 
 

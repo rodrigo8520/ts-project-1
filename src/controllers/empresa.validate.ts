@@ -14,7 +14,7 @@ export const getEmpresaValid = () => {
 export const getEmpresaValidById = () => {
     return [
 
-        body('id').exists().isNumeric().withMessage('Tiene que ser numerico'),
+        check('id').exists().isNumeric().withMessage('Tiene que ser numerico'),
     ]
 }
 
