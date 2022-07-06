@@ -95,25 +95,6 @@ export const deleteProducto = async (req: Request, res: Response, next: NextFunc
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 export const getProducto = async (req: Request, res: Response, next: NextFunction) => {
 

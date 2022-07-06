@@ -8,6 +8,8 @@ import horaETrabajo from "./routes/remu.routes"
 import producto from "./routes/producto.routes"
 import empresa from "./routes/empresa.routes"
 import servicio from "./routes/servicio.routes"
+import usuario from "./routes/usuario.routes"
+
 
 const router = Router()
 
@@ -28,6 +30,10 @@ router.use('/producto', producto)
 router.use('/empresa', empresa)
 
 router.use('/servicio', servicio)
+
+router.use('/usuario', usuario)
+
+
 
 //router.use('/remu', reajusteTrabajo)
 
