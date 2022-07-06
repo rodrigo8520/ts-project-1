@@ -1,7 +1,7 @@
 import { Router } from "express"
-import { deleteServicio, getServicio, getServicioId, postServicio, putServicio } from "../controllers/servicio.controller"
+import { deleteServicio, getServicio, getServicioId, postServicio, putServicio } from "../controllers/servicio/servicio.controller"
 import { deleteServicioValid, getServicioValid, getServicioValidById,
-         postServicioValid, putServicioValid, validateServicio } from "../controllers/servicio.validate"
+         postServicioValid, putServicioValid, validateServicio } from "../controllers/servicio/servicio.validate"
 
 
 
