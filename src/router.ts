@@ -7,6 +7,7 @@ import sumarMatematica from "./routes/sumar.routes";
 import horaETrabajo from "./routes/remu.routes"
 import producto from "./routes/producto.routes"
 import empresa from "./routes/empresa.routes"
+import servicio from "./routes/servicio.routes"
 
 const router = Router()
 
@@ -25,6 +26,8 @@ router.use('/remu', horaETrabajo)
 router.use('/producto', producto)
 
 router.use('/empresa', empresa)
+
+router.use('/servicio', servicio)
 
 //router.use('/remu', reajusteTrabajo)
 
