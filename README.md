@@ -41,5 +41,5 @@ http://localhost:3000/v1matematicas/sumar/5/5
 http://localhost:3000/api-docs/
 
 
-modelo base de datos sistema de facturacion
-migraciones con sequelize
+endPoints Usuario - incompletos
+endPOints factura - incompletos
