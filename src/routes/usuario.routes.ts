@@ -8,9 +8,9 @@ import { getUsuario, getUsuarioId, putUsuario } from "../controllers/usuario/usu
 const router = Router()
 
 router.get('/', getUsuarioValid(),          validateUsuario, getUsuario)
-router.get('/:id',getUsuarioValidById() ,   validateUsuario, getUsuarioId)
-router.put('/:id', putUsuarioValid(),       validateUsuario, putUsuario)
-router.delete('/:id', deleteUsuarioValid(), validateUsuario, deleteUsuarioValid)
+router.get('/:rut',getUsuarioValidById() ,   validateUsuario, getUsuarioId)
+router.put('/:rut', putUsuarioValid(),       validateUsuario, putUsuario)
+router.delete('/:rut', deleteUsuarioValid(), validateUsuario, deleteUsuarioValid)
 router.post('/', postUsuarioValid(),        validateUsuario, postUsuarioValid)
 
 

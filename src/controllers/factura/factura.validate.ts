@@ -22,7 +22,6 @@ export const getFacturaValidById = () => {
 export const postFacturaValid = () => {
     return [
 
-        body('rut').optional().isNumeric(),
         body('fecha').optional().isString()
 
     ]

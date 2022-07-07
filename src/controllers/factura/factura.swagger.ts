@@ -35,7 +35,6 @@
 /**
  * A FacturaCreate type
  * @typedef {object} FacturaCreate
- * @property {number} rut.required
  * @property {string} fechaCreacion.required
 */
 

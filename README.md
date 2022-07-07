@@ -41,6 +41,6 @@ http://localhost:3000/v1matematicas/sumar/5/5
 http://localhost:3000/api-docs/
 
 
-endPoints Usuario - incompletos --> DB tabla usuario sacar el "autoincrementa" en rut
-endPOints factura - incompletos
+endPoints Usuario - incompletos --> problema en no  postUsuario 
+endPOints factura - incompletos --> duda con rut 
 endPOints detalle - incompletos --> llave foraneas null, duda pendiente 
