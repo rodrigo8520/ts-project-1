@@ -10,7 +10,7 @@ import empresa from "./routes/empresa.routes"
 import servicio from "./routes/servicio.routes"
 import usuario from "./routes/usuario.routes"
 import factura from "./routes/factura.routes"
-
+import detalle from "./routes/detalle.routes"
 
 const router = Router()
 
@@ -35,6 +35,8 @@ router.use('/servicio', servicio)
 router.use('/usuario', usuario)
 
 router.use('/factura', factura)
+
+router.use('/detalle', detalle)
 
 
 
